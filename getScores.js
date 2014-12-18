@@ -29,7 +29,6 @@ function multipleChoice() {
   score += getMultipleChoice('3_1','ABD');
   score += getMultipleChoice('3_2','ABC');
   return score;
-
 }
 
 
