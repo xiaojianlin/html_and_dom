@@ -26,50 +26,69 @@ function singleChoice() {
 
 function multipleChoice() {
   var multipleChoicescore = 0;
-  var answer_3_1_A = '' ;
-  var answer_3_1_B = '';
-  var answer_3_1_C = '';
-  var answer_3_1_D = '';
-  if (document.getElementById('3_1_A').checked) {
-    answer_3_1_A = 'A';
-  }
-  if (document.getElementById('3_1_B').checked) {
-    answer_3_1_B = 'B';
-  }
-  if (document.getElementById('3_1_C').checked) {
-    answer_3_1_C = 'C';
-  }
-  if (document.getElementById('3_1_D').checked) {
-    answer_3_1_D = 'D';
-  }
-
-  if (answer_3_1_A + answer_3_1_B + answer_3_1_C + answer_3_1_D === 'ABD') {
-    multipleChoicescore += 100;
-  }
-
-  var answer_3_2_A = '';
-  var answer_3_2_B = '';
-  var answer_3_2_C = '';
-  var answer_3_2_D = '';
-  if (document.getElementById('3_2_A').checked) {
-    answer_3_2_A = 'A';
-  }
-  if (document.getElementById('3_2_B').checked) {
-    answer_3_2_B = 'B';
-  }
-  if (document.getElementById('3_2_C').checked) {
-    answer_3_2_C = 'C';
-  }
-  if (document.getElementById('3_2_D').checked) {
-    answer_3_2_D = 'D';
-  }
-
-  if (answer_3_2_A + answer_3_2_B + answer_3_2_C + answer_3_2_D === 'ABC') {
-    multipleChoicescore += 100;
-  }
+  multipleChoicescore += getMultipleChoice('3_1','ABD',100);
+  multipleChoicescore += getMultipleChoice('3_2','ABC',100);
+  // var answer_3_1_A = '' ;
+  // var answer_3_1_B = '';
+  // var answer_3_1_C = '';
+  // var answer_3_1_D = '';
+  // if (document.getElementById('3_1_A').checked) {
+  //   answer_3_1_A = 'A';
+  // }
+  // if (document.getElementById('3_1_B').checked) {
+  //   answer_3_1_B = 'B';
+  // }
+  // if (document.getElementById('3_1_C').checked) {
+  //   answer_3_1_C = 'C';
+  // }
+  // if (document.getElementById('3_1_D').checked) {
+  //   answer_3_1_D = 'D';
+  // }
+  //
+  // if (answer_3_1_A + answer_3_1_B + answer_3_1_C + answer_3_1_D === 'ABD') {
+  //   multipleChoicescore += 100;
+  // }
+  //
+  // var answer_3_2_A = '';
+  // var answer_3_2_B = '';
+  // var answer_3_2_C = '';
+  // var answer_3_2_D = '';
+  // if (document.getElementById('3_2_A').checked) {
+  //   answer_3_2_A = 'A';
+  // }
+  // if (document.getElementById('3_2_B').checked) {
+  //   answer_3_2_B = 'B';
+  // }
+  // if (document.getElementById('3_2_C').checked) {
+  //   answer_3_2_C = 'C';
+  // }
+  // if (document.getElementById('3_2_D').checked) {
+  //   answer_3_2_D = 'D';
+  // }
+  //
+  // if (answer_3_2_A + answer_3_2_B + answer_3_2_C + answer_3_2_D === 'ABC') {
+  //   multipleChoicescore += 100;
+  // }
   return multipleChoicescore;
 
 }
+
+
+function getMultipleChoice(id,answer,score) {
+  var getMultipleChoicescore = 0;
+  var choice = document.getElementsByName(id);
+  var string = '';
+  for(var i = 0; i<choice.length; i++ ) {
+    if(choice[i].checked) {
+      string += choice[i].value;
+    }
+  }
+  if(string === answer) {
+    getMultipleChoicescore += score;
+  }
+  return getMultipleChoicescore;
+}
+
 
 
 function trueAndFalse() {
