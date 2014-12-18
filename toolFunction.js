@@ -1,7 +1,7 @@
 function getUserAnswers() {
 //  alert('ooo');
   var olay = [document.getElementById('1_1').value];
-  olay.push = [document.getElementById('1_2_1').value,document.getElementById('1_2_2').value,document.getElementById('1_2_3').value];
+  olay.push = (document.getElementById('1_2_1').value,document.getElementById('1_2_2').value,document.getElementById('1_2_3').value);
   return olay;
 
 }
