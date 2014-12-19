@@ -49,8 +49,16 @@ function getMultipleChoice(id,answer) {
 
 function trueAndFalse() {
   var score = 0;
-  score += contrastAnswer(document.getElementById('4_1').value,'错',1000);
-  score += contrastAnswer(document.getElementById('4_2').value,'对',1000);
+  var answer_4_1 = document.getElementsByName('4_1');
+  var answer_4_2 = document.getElementsByName('4_2');
+  for(var i = 0; i < answer_4_1.length; i++) {
+    if (answer_4_1[i].checked ) {
+      score += contrastAnswer(answer_4_1[i].value,'错',1000);
+    }
+    if (answer_4_2[i].checked ) {
+      score += contrastAnswer(answer_4_2[i].value,'对',1000);
+    }
+  }
   return score;
 }
 
