@@ -1,12 +1,12 @@
 function checkform() {
-  // if (document.getElementById('classes').value === '' ||
-  //     document.getElementById('student_number').value === '' ||
-  //     document.getElementById('name').value === '') {
-  //   alert('请填写班级、学号和姓名！');
-  // }
-  // else {
+  if (document.getElementById('classes').value === '' ||
+      document.getElementById('student_number').value === '' ||
+      document.getElementById('name').value === '') {
+    alert('请填写班级、学号和姓名！');
+  }
+  else {
     document.getElementById("score").value = getAnswer();
-//  }
+  }
   return false;
 }
 
